@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Your Name</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Dark Mode Toggle -->
+    <button id="darkModeToggle" class="dark-mode-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Your Name</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="#" class="active">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="resume/resume.pdf" target="_blank" class="resume-link">
+                    <i class="fas fa-file-download"></i> Resume
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <div class="container">
+            <h1>Technical Blog</h1>
+            <p>Sharing insights and tutorials on .NET development, cloud technologies, and software engineering</p>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-posts">
+        <div class="container">
+            <div class="blog-grid">
+                <div class="blog-card" data-aos="fade-up">
+                    <div class="blog-image">
+                        <div class="placeholder">.NET 7 Features</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Exploring New Features in .NET 7</h3>
+                        <p class="blog-date">October 15, 2023</p>
+                        <p>A deep dive into the performance improvements and new APIs in .NET 7. Learn about Native AOT, performance enhancements, and new language features.</p>
+                        <a href="blog-posts/post1.html" class="btn small">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image">
+                        <div class="placeholder">Azure Functions</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Building Serverless Apps with Azure Functions</h3>
+                        <p class="blog-date">September 28, 2023</p>
+                        <p>Learn how to create scalable serverless applications using Azure Functions. This tutorial covers triggers, bindings, and best practices.</p>
+                        <a href="blog-posts/post2.html" class="btn small">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image">
+                        <div class="placeholder">Docker for .NET</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Containerizing .NET Applications with Docker</h3>
+                        <p class="blog-date">September 10, 2023</p>
+                        <p>Step-by-step guide to containerizing your .NET applications using Docker. Includes multi-stage builds and best practices.</p>
+                        <a href="#" class="btn small">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-image">
+                        <div class="placeholder">Entity Framework</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Advanced Entity Framework Core Patterns</h3>
+                        <p class="blog-date">August 22, 2023</p>
+                        <p>Explore advanced patterns and techniques for using Entity Framework Core in enterprise applications.</p>
+                        <a href="#" class="btn small">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-stack-overflow"></i></a>
+            </div>
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

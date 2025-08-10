@@ -1,55 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tipu Sultan | Senior Software Engineer</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kutub Uddin Tipu - Full Stack .NET Developer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Use CDN for AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <header class="hero">
-    <h1>Tipu Sultan</h1>
-    <p>Senior Software Engineer @ Technohaven Company Ltd.</p>
-    <a href="#contact" class="btn">Contact Me</a>
-  </header>
+    <!-- Dark Mode Toggle -->
+    <button id="darkModeToggle" class="dark-mode-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
 
-  <section class="about">
-    <h2>About Me</h2>
-    <p>I am a passionate and results-driven software engineer with expertise in full-stack development, system architecture, and scalable enterprise applications.</p>
-  </section>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Kutub Uddin Tipu</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="resume/Kutub_Uddin_Resume.pdf" target="_blank" class="resume-link">
+                    <i class="fas fa-file-download"></i> Resume
+                </a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section class="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>ASP.NET Core, Web Forms</li>
-      <li>Angular, TypeScript, JavaScript</li>
-      <li>PostgreSQL, SQL Server</li>
-      <li>Docker, IIS, Git</li>
-      <li>Clean Architecture, SOLID Principles</li>
-    </ul>
-  </section>
-
-  <section class="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>VAT Management System</h3>
-      <p>Enterprise solution integrated with IVAS and ERP, built using ASP.NET Core and Angular.</p>
+    <!-- Hero Section with Profile Image -->
+<!-- Hero Section with Background Image -->
+<section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+        <div class="profile-image-container">
+            <img src="images/profile.jpg" alt="Your Name" class="profile-image">
+        </div>
+        <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
+        <p>Full Stack .NET Developer</p>
+        <p class="hero-subtitle">Building robust web applications with modern technologies</p>
+        <div class="hero-buttons">
+            <a href="#projects" class="btn primary">View My Work</a>
+            <a href="#contact" class="btn secondary">Get In Touch</a>
+        </div>
     </div>
-    <div class="project">
-      <h3>Inventory Tracking System</h3>
-      <p>Designed and developed item tracking with dynamic properties and unique unit management using PostgreSQL.</p>
+</section>
+<!-- Profile Card Section (ADD THIS NEW SECTION HERE) -->
+    <section class="profile-card">
+        <div class="container">
+            <div class="profile-card-content" data-aos="fade-up">
+                <div class="profile-card-image">
+                    <img src="images/profile.jpg" alt="Your Name">
+                </div>
+                <div class="profile-card-info">
+                    <h2>Kutub Uddin Tipu</h2>
+                    <p class="title">Full Stack .NET Developer</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Your Location</p>
+                    <div class="social-links-profile">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <a href="resume/Kutub_Uddin_Resume.pdf" class="btn primary" target="_blank">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Profile Image -->
+<section id="about" class="about">
+    <div class="container">
+        <h2 data-aos="fade-up">About Me</h2>
+        <div class="about-content" data-aos="fade-up">
+            <div class="profile-image-large-container">
+                <img src="images/profile.jpg" alt="Your Name" class="profile-image-large">
+            </div>
+            <div class="about-text">
+                <p>I'm a passionate Full Stack .NET Developer with expertise in building scalable web applications. With experience in both frontend and backend technologies, I create efficient, maintainable solutions.</p>
+                <p>Currently focused on .NET Core, C#, Angular/React, and cloud technologies like Azure.</p>
+                <div class="stats">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                        <h3>5+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                        <h3>50+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                        <h3>20+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
 
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:tipu.sultan@example.com">tipu.sultan@example.com</a></p>
-    <p>GitHub: <a href="https://github.com/kutubuddintipu" target="_blank">kutubuddintipu</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/tipu-sultan" target="_blank">tipu-sultan</a></p>
-  </section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 data-aos="fade-up">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category" data-aos="fade-up">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li><i class="fab fa-microsoft"></i> .NET Core / .NET 5+</li>
+                        <li><i class="fab fa-microsoft"></i> C#</li>
+                        <li><i class="fas fa-database"></i> SQL Server</li>
+                        <li><i class="fas fa-database"></i> Entity Framework</li>
+                        <li><i class="fab fa-microsoft"></i> Azure</li>
+                        <li><i class="fas fa-server"></i> Web API</li>
+                    </ul>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li><i class="fab fa-html5"></i> HTML5</li>
+                        <li><i class="fab fa-css3"></i> CSS3</li>
+                        <li><i class="fab fa-js"></i> JavaScript</li>
+                        <li><i class="fab fa-angular"></i> Angular</li>
+                        <li><i class="fab fa-react"></i> React</li>
+                        <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
+                    </ul>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Tools & Others</h3>
+                    <ul>
+                        <li><i class="fab fa-git"></i> Git</li>
+                        <li><i class="fab fa-docker"></i> Docker</li>
+                        <li><i class="fas fa-database"></i> MongoDB</li>
+                        <li><i class="fab fa-microsoft"></i> Visual Studio</li>
+                        <li><i class="fas fa-code"></i> VS Code</li>
+                        <li><i class="fas fa-bug"></i> Unit Testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Tipu Sultan. All rights reserved.</p>
-  </footer>
+    <!-- Projects Section with Filtering -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 data-aos="fade-up">Featured Projects</h2>
+            
+            <!-- Project Filter Buttons -->
+            <div class="project-filters" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter=".net">.NET</button>
+                <button class="filter-btn" data-filter="angular">Angular</button>
+                <button class="filter-btn" data-filter="react">React</button>
+                <button class="filter-btn" data-filter="azure">Azure</button>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card mix .net angular" data-aos="fade-up">
+                    <div class="project-image">
+                        <div class="placeholder">E-Commerce Platform</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A full-stack e-commerce solution built with .NET Core, Angular, and SQL Server.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">.NET Core</span>
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">SQL Server</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn small">Live Demo</a>
+                            <a href="#" class="btn small secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card mix .net react azure" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <div class="placeholder">Task Management System</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Task Management System</h3>
+                        <p>Enterprise task management application with real-time updates and reporting.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">ASP.NET MVC</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Azure</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn small">Live Demo</a>
+                            <a href="#" class="btn small secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card mix .net azure" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <div class="placeholder">API Gateway</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>API Gateway</h3>
+                        <p>Microservices API gateway with authentication and rate limiting.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">.NET 6</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn small">Live Demo</a>
+                            <a href="#" class="btn small secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card mix react" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <div class="placeholder">Dashboard Analytics</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Dashboard Analytics</h3>
+                        <p>Real-time analytics dashboard with interactive charts and data visualization.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn small">Live Demo</a>
+                            <a href="#" class="btn small secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview Section -->
+    <section id="blog" class="blog-preview">
+        <div class="container">
+            <h2 data-aos="fade-up">Latest Blog Posts</h2>
+            <div class="blog-grid">
+                <div class="blog-card" data-aos="fade-up">
+                    <div class="blog-image">
+                        <div class="placeholder">.NET 7 Features</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Exploring New Features in .NET 7</h3>
+                        <p class="blog-date">October 15, 2023</p>
+                        <p>A deep dive into the performance improvements and new APIs in .NET 7.</p>
+                        <a href="blog-posts/post1.html" class="btn small">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image">
+                        <div class="placeholder">Azure Functions</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Building Serverless Apps with Azure Functions</h3>
+                        <p class="blog-date">September 28, 2023</p>
+                        <p>Learn how to create scalable serverless applications using Azure Functions.</p>
+                        <a href="blog-posts/post2.html" class="btn small">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" data-aos="fade-up">
+                <a href="blog.html" class="btn primary">View All Posts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Formspree -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 data-aos="fade-up">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-up">
+                    <p>Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>kutubuddin.net@hotmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>https://www.linkedin.com/in/kutubuddin-tipu/</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>https://github.com/kutubuddintipu</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-aos="fade-up">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/kutubuddintipu"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kutubuddin-tipu/"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-stack-overflow"></i></a>
+            </div>
+            <p>&copy; 2024 Kutub Uddin Tipu. All rights reserved.</p>
+        </div>
+    </footer>
+
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+	
 </body>
 </html>
