@@ -10,311 +10,232 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Dark Mode Toggle -->
-    <button id="darkModeToggle" class="dark-mode-toggle">
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle">
         <i class="fas fa-moon"></i>
     </button>
 
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">Kutub Uddin Tipu</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="resume/Kutub_Uddin_Resume.pdf" target="_blank" class="resume-link">
-                    <i class="fas fa-file-download"></i> Resume
-                </a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Navigation -->
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- Hero Section with Profile Image -->
-<!-- Hero Section with Background Image -->
-<section id="home" class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content" data-aos="fade-up">
-        <div class="profile-image-container">
-            <img src="images/profile.jpg" alt="Your Name" class="profile-image">
-        </div>
-        <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
-        <p>Full Stack .NET Developer</p>
-        <p class="hero-subtitle">Building robust web applications with modern technologies</p>
-        <div class="hero-buttons">
-            <a href="#projects" class="btn primary">View My Work</a>
-            <a href="#contact" class="btn secondary">Get In Touch</a>
-        </div>
-    </div>
-</section>
-<!-- Profile Card Section (ADD THIS NEW SECTION HERE) -->
-    <section class="profile-card">
-        <div class="container">
-            <div class="profile-card-content" data-aos="fade-up">
-                <div class="profile-card-image">
-                    <img src="images/profile.jpg" alt="Your Name">
-                </div>
-                <div class="profile-card-info">
-                    <h2>Kutub Uddin Tipu</h2>
-                    <p class="title">Full Stack .NET Developer</p>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> Your Location</p>
-                    <div class="social-links-profile">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
-                    <a href="resume/Kutub_Uddin_Resume.pdf" class="btn primary" target="_blank">
-                        <i class="fas fa-download"></i> Download Resume
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="profile-image-container">
+                <img src="images/Tipu.jpg" alt="Kutub Uddin Tipu" class="profile-image">
+            </div>
+            <h1>Kutub Uddin Tipu</h1>
+            <p class="subtitle">Senior Software Engineer</p>
+            <p class="description">
+                Passionate developer with 4+ years of experience building scalable, secure, and efficient web applications. 
+                Specializing in ASP.NET Core, Angular, and modern cloud technologies.
+            </p>
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary" id="downloadResume">
+                        <i class="fas fa-download"></i>
+                        Download Resume
                     </a>
-                </div>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    Get In Touch
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- About Section with Profile Image -->
-<section id="about" class="about">
-    <div class="container">
-        <h2 data-aos="fade-up">About Me</h2>
-        <div class="about-content" data-aos="fade-up">
-            <div class="profile-image-large-container">
-                <img src="images/profile.jpg" alt="Your Name" class="profile-image-large">
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title fade-up">About Me</h2>
+        <div class="about-content fade-up">
+            <div class="profile-image-container2">
+                <img src="images/Tipu_Sultan_PS.png" alt="Kutub Uddin Tipu" class="profile-image2">
             </div>
             <div class="about-text">
-                <p>I'm a passionate Full Stack .NET Developer with expertise in building scalable web applications. With experience in both frontend and backend technologies, I create efficient, maintainable solutions.</p>
-                <p>Currently focused on .NET Core, C#, Angular/React, and cloud technologies like Azure.</p>
-                <div class="stats">
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                        <h3>5+</h3>
-                        <p>Years Experience</p>
+                <p>
+                    I'm a passionate Senior Software Engineer with expertise in building scalable web applications. 
+                    Currently working at Technohaven Company Ltd., I specialize in translating complex client requirements 
+                    into robust software solutions.
+                </p>
+                <p>
+                    My expertise spans ASP.NET Core, Angular, PostgreSQL, and software architecture following SOLID principles. 
+                    I'm passionate about clean code, agile methodologies, and product-focused development that drives real business value.
+                </p>
+                <p>
+                    From Mohakhali, Dhaka, I bring both technical excellence and leadership experience, having successfully 
+                    supervised teams and delivered projects that resulted in significant revenue growth and improved user experiences.
+                </p>
+            </div>
+        </div>
+
+        <div class="stats-grid fade-up">
+            <div class="stat-card">
+                <div class="stat-number">4+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">34%</div>
+                <div class="stat-label">Revenue Increase</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Team Leadership</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <h2 class="section-title fade-up">Professional Experience</h2>
+        <div class="timeline fade-up">
+            <div class="timeline-item">
+                <div class="timeline-date1">April 2023 - Present</div>
+                <div class="timeline-content">
+                    <div class="timeline-company">Technohaven Company Ltd.</div>
+                    <div class="timeline-position">Senior Software Engineer</div>
+                    <div class="timeline-description">
+                        Leading a team of 3 junior engineers in developing VATPrompt - an automated VAT management system. 
+                        Built robust APIs for ERP integration and achieved 34% revenue increase within 6 months through 
+                        application enhancements and performance optimizations.
                     </div>
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                        <h3>50+</h3>
-                        <p>Projects Completed</p>
-                    </div>
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                        <h3>20+</h3>
-                        <p>Happy Clients</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date2">June 2021 - March 2023</div>
+                <div class="timeline-content">
+                    <div class="timeline-company">Oner Systems Limited</div>
+                    <div class="timeline-position">Software Engineer</div>
+                    <div class="timeline-description">
+                        Designed and developed Oner ERP Suite web applications using ASP.NET MVC and AngularJS. 
+                        Worked extensively with Entity Framework and SQL Server to enhance data frameworks and 
+                        optimize application performance and reliability.
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 data-aos="fade-up">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category" data-aos="fade-up">
-                    <h3>Backend</h3>
-                    <ul>
-                        <li><i class="fab fa-microsoft"></i> .NET Core / .NET 5+</li>
-                        <li><i class="fab fa-microsoft"></i> C#</li>
-                        <li><i class="fas fa-database"></i> SQL Server</li>
-                        <li><i class="fas fa-database"></i> Entity Framework</li>
-                        <li><i class="fab fa-microsoft"></i> Azure</li>
-                        <li><i class="fas fa-server"></i> Web API</li>
-                    </ul>
-                </div>
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Frontend</h3>
-                    <ul>
-                        <li><i class="fab fa-html5"></i> HTML5</li>
-                        <li><i class="fab fa-css3"></i> CSS3</li>
-                        <li><i class="fab fa-js"></i> JavaScript</li>
-                        <li><i class="fab fa-angular"></i> Angular</li>
-                        <li><i class="fab fa-react"></i> React</li>
-                        <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
-                    </ul>
-                </div>
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Tools & Others</h3>
-                    <ul>
-                        <li><i class="fab fa-git"></i> Git</li>
-                        <li><i class="fab fa-docker"></i> Docker</li>
-                        <li><i class="fas fa-database"></i> MongoDB</li>
-                        <li><i class="fab fa-microsoft"></i> Visual Studio</li>
-                        <li><i class="fas fa-code"></i> VS Code</li>
-                        <li><i class="fas fa-bug"></i> Unit Testing</li>
-                    </ul>
-                </div>
+    <section id="skills" class="section">
+        <h2 class="section-title fade-up">Technical Expertise</h2>
+        <div class="skills-grid fade-up">
+            <div class="skill-category">
+                <h3>Backend Technologies</h3>
+                <ul class="skill-list">
+                    <li class="skill-item"><i class="fab fa-microsoft"></i>ASP.NET Core</li>
+                    <li class="skill-item"><i class="fab fa-microsoft"></i>ASP.NET Web Forms</li>
+                    <li class="skill-item"><i class="fab fa-microsoft"></i>ASP.NET MVC</li>
+                    <li class="skill-item"><i class="fas fa-code"></i>C#</li>
+                    <li class="skill-item"><i class="fas fa-server"></i>Web API / REST API</li>
+                    <li class="skill-item"><i class="fas fa-database"></i>Entity Framework</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Frontend Technologies</h3>
+                <ul class="skill-list">
+                    <li class="skill-item"><i class="fab fa-angular"></i>Angular</li>
+                    <li class="skill-item"><i class="fab fa-angular"></i>AngularJS</li>
+                    <li class="skill-item"><i class="fab fa-js"></i>JavaScript</li>
+                    <li class="skill-item"><i class="fab fa-html5"></i>HTML5</li>
+                    <li class="skill-item"><i class="fab fa-css3-alt"></i>CSS3</li>
+                    <li class="skill-item"><i class="fab fa-bootstrap"></i>Bootstrap 5</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Database & Tools</h3>
+                <ul class="skill-list">
+                    <li class="skill-item"><i class="fas fa-database"></i>PostgreSQL</li>
+                    <li class="skill-item"><i class="fas fa-database"></i>SQL Server</li>
+                    <li class="skill-item"><i class="fas fa-database"></i>MySQL</li>
+                    <li class="skill-item"><i class="fab fa-git-alt"></i>Git</li>
+                    <li class="skill-item"><i class="fas fa-code-branch"></i>SVN</li>
+                    <li class="skill-item"><i class="fas fa-bug"></i>Unit Testing</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section with Filtering -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 data-aos="fade-up">Featured Projects</h2>
-            
-            <!-- Project Filter Buttons -->
-            <div class="project-filters" data-aos="fade-up">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter=".net">.NET</button>
-                <button class="filter-btn" data-filter="angular">Angular</button>
-                <button class="filter-btn" data-filter="react">React</button>
-                <button class="filter-btn" data-filter="azure">Azure</button>
-            </div>
-            
-            <div class="projects-grid">
-                <div class="project-card mix .net angular" data-aos="fade-up">
-                    <div class="project-image">
-                        <div class="placeholder">E-Commerce Platform</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>E-Commerce Platform</h3>
-                        <p>A full-stack e-commerce solution built with .NET Core, Angular, and SQL Server.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">.NET Core</span>
-                            <span class="tech-tag">Angular</span>
-                            <span class="tech-tag">SQL Server</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn small">Live Demo</a>
-                            <a href="#" class="btn small secondary">GitHub</a>
-                        </div>
-                    </div>
+    <!-- Contact Section -->
+     <section id="contact" class="section">
+        <h2 class="section-title fade-up">Get In Touch</h2>
+        <div class="contact-container fade-up">
+            <div class="contact-info">
+                <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--text-primary);">
+                    Let's work together to build something amazing!
+                </h3>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 30px;">
+                    I'm always interested in new opportunities and exciting projects. 
+                    Feel free to reach out if you'd like to discuss potential collaborations.
+                </p>
+
+                <div class="contact-links">
+                    <div style="display:flex; flex-direction:column; gap:15px;">
+                    <a href="mailto:kutubuddin.net@hotmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        kutubuddin.net@hotmail.com
+                    </a>
+                    <a href="tel:+8801517173752" class="contact-link">
+                        <i class="fas fa-phone"></i>
+                        +880 1517-173752
+                    </a>
+                    <a href="https://www.linkedin.com/in/kutubuddin-tipu/" target="_blank" class="contact-link">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn Profile
+                    </a>
+                    <a href="https://github.com/kutubuddintipu" target="_blank" class="contact-link">
+                        <i class="fab fa-github"></i>
+                        GitHub Profile
+                    </a>
                 </div>
-                <div class="project-card mix .net react azure" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-image">
-                        <div class="placeholder">Task Management System</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Task Management System</h3>
-                        <p>Enterprise task management application with real-time updates and reporting.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">ASP.NET MVC</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Azure</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn small">Live Demo</a>
-                            <a href="#" class="btn small secondary">GitHub</a>
-                        </div>
-                    </div>
                 </div>
-                <div class="project-card mix .net azure" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-image">
-                        <div class="placeholder">API Gateway</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>API Gateway</h3>
-                        <p>Microservices API gateway with authentication and rate limiting.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">.NET 6</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Redis</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn small">Live Demo</a>
-                            <a href="#" class="btn small secondary">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card mix react" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-image">
-                        <div class="placeholder">Dashboard Analytics</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Dashboard Analytics</h3>
-                        <p>Real-time analytics dashboard with interactive charts and data visualization.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">D3.js</span>
-                            <span class="tech-tag">Node.js</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn small">Live Demo</a>
-                            <a href="#" class="btn small secondary">GitHub</a>
-                        </div>
-                    </div>
-                </div>
+<div style="flex:1; min-width:300px;">
+      <h4 style="margin-bottom:15px; font-size:1.2rem;">Message me</h4>
+      <form onsubmit="return false" style="display:grid; gap:15px;">
+        <input type="text" id="name" placeholder="Your name" required 
+               style="padding:12px 15px; border-radius:8px; border:1px solid #ccc; font-size:1rem; outline:none;">
+        
+        <input type="email" id="email" placeholder="Your email" required 
+               style="padding:12px 15px; border-radius:8px; border:1px solid #ccc; font-size:1rem; outline:none;">
+        
+        <textarea id="message" placeholder="Message" rows="5" required 
+                  style="padding:12px 15px; border-radius:8px; border:1px solid #ccc; font-size:1rem; resize:none; outline:none;"></textarea>
+        
+        <button type="submit" onclick="MessageForm()" 
+                style="background:#ff6b6b; color:white; padding:12px 20px; border:none; border-radius:8px; cursor:pointer; font-size:1rem; display:flex; align-items:center; gap:8px; justify-content:center;">
+          <i class="fas fa-envelope"></i> Send Message
+        </button>
+      </form>
+    </div>
+
+
             </div>
         </div>
     </section>
-
-    <!-- Blog Preview Section -->
-    <section id="blog" class="blog-preview">
-        <div class="container">
-            <h2 data-aos="fade-up">Latest Blog Posts</h2>
-            <div class="blog-grid">
-                <div class="blog-card" data-aos="fade-up">
-                    <div class="blog-image">
-                        <div class="placeholder">.NET 7 Features</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3>Exploring New Features in .NET 7</h3>
-                        <p class="blog-date">October 15, 2023</p>
-                        <p>A deep dive into the performance improvements and new APIs in .NET 7.</p>
-                        <a href="blog-posts/post1.html" class="btn small">Read More</a>
-                    </div>
-                </div>
-                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="blog-image">
-                        <div class="placeholder">Azure Functions</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3>Building Serverless Apps with Azure Functions</h3>
-                        <p class="blog-date">September 28, 2023</p>
-                        <p>Learn how to create scalable serverless applications using Azure Functions.</p>
-                        <a href="blog-posts/post2.html" class="btn small">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center" data-aos="fade-up">
-                <a href="blog.html" class="btn primary">View All Posts</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section with Formspree -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 data-aos="fade-up">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info" data-aos="fade-up">
-                    <p>Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>kutubuddin.net@hotmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <span>https://www.linkedin.com/in/kutubuddin-tipu/</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-github"></i>
-                            <span>https://github.com/kutubuddintipu</span>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-aos="fade-up">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="btn primary">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://github.com/kutubuddintipu"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/kutubuddin-tipu/"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-stack-overflow"></i></a>
-            </div>
-            <p>&copy; 2024 Kutub Uddin Tipu. All rights reserved.</p>
-        </div>
-    </footer>
 
      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>

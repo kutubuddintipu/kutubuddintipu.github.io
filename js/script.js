@@ -1,197 +1,257 @@
-// Wait for DOM to load
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize AOS only if it exists
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            offset: 100
-        });
-    }
+ // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // Dark Mode Toggle
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const body = document.body;
-
-    // Check for saved theme preference or respect OS preference
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-    if (savedTheme === 'dark' || (!savedTheme && prefersDarkScheme.matches)) {
-        body.classList.add('dark-mode');
-        if (darkModeToggle) {
-            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
         }
-    } else {
-        body.classList.remove('dark-mode');
-        if (darkModeToggle) {
-            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        }
-    }
 
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            } else {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                body.removeAttribute('data-theme');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
                 localStorage.setItem('theme', 'light');
-                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
             }
         });
-    }
 
-    // Project Filtering
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            // Remove active class from all buttons
-            filterBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            const filterValue = this.getAttribute('data-filter');
-            
-            projectCards.forEach(card => {
-                if (filterValue === 'all' || card.classList.contains(filterValue)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
+        // Smooth Scrolling for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
-    });
 
-    // Form submission handling
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            // Formspree will handle the submission
-            const submitBtn = this.querySelector('button[type="submit"]');
-            if (submitBtn) {
-                const originalText = submitBtn.textContent;
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                submitBtn.disabled = true;
+        // Update Active Navigation Link
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        function updateActiveNav() {
+            const scrollPos = window.scrollY + 200;
+            
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                const bottom = top + section.offsetHeight;
+                const id = section.getAttribute('id');
                 
-                // Reset button after form submission
-                setTimeout(() => {
-                    if (submitBtn) {
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                    }
-                }, 3000);
-            }
+                if (scrollPos >= top && scrollPos <= bottom) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+
+        // Fade Up Animation on Scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
         });
-    }
 
-    // Header scroll effect
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        if (header) {
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-                header.style.background = 'rgba(255,255,255,0.95)';
-            } else {
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-                header.style.background = 'white';
-            }
-        }
-    });
+        // Resume Download Functionality
+        document.getElementById('downloadResume').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Create resume content
+            const resumeContent = `
+KUTUB UDDIN TIPU
+Senior Software Engineer
 
-    // Mobile menu toggle
-    const mobileMenuToggle = document.createElement('div');
-    mobileMenuToggle.innerHTML = '☰';
-    mobileMenuToggle.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        font-size: 1.5rem;
-        cursor: pointer;
-        z-index: 1001;
-        display: none;
-    `;
+Email: kutubuddin.net@hotmail.com
+Phone: +880 1517-173752
+Location: Mohakhali, Dhaka, Bangladesh
+LinkedIn: linkedin.com/in/kutubuddin-tipu
+GitHub: github.com/kutubuddintipu
 
-    document.body.appendChild(mobileMenuToggle);
+PROFESSIONAL SUMMARY
+Senior Software Engineer with 4+ years of experience in building scalable, secure, and efficient web applications. Currently working at Technohaven Company Ltd., specializing in translating complex client requirements into robust software solutions. Proficient in ASP.NET Core, Angular, PostgreSQL, and software architecture following SOLID principles.
 
-    const navLinks = document.querySelector('.nav-links');
+WORK EXPERIENCE
 
-    if (mobileMenuToggle && navLinks) {
-        mobileMenuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
+SENIOR SOFTWARE ENGINEER | Technohaven Company Ltd. | April 2023 – Present
+• Supervised and lead a team of 3 junior software engineers during development of robust upgrade version
+• Developed and maintained VATPrompt (Automated VAT accounts management) web application
+• Built VATPrompt API with external endpoints for ERP, SAP, Tally software integration
+• Achieved 34% revenue increase within 6 months through enhanced features and optimization
+• Developed and maintained THRM (Technohaven Human Resource Management) software
+
+SOFTWARE ENGINEER | Oner Systems Limited | June 2021 – March 2023
+• Designed, developed, and maintained Oner ERP Suite web applications using ASP.NET technologies
+• Worked with Microsoft Entity Framework and SQL Server for data framework enhancement
+• Enhanced application features to fix bugs and optimize performance, reliability, and efficiency
+• Proficiently troubleshot simple and complex technological issues
+
+TECHNICAL SKILLS
+• Backend: ASP.NET Core, ASP.NET MVC, ASP.NET Web Forms, C#, Web API, REST API, Entity Framework
+• Frontend: Angular, AngularJS, JavaScript, HTML5, CSS3, Bootstrap 5
+• Databases: PostgreSQL, SQL Server, MySQL
+• Tools & Others: Git, SVN, Unit Testing, Visual Studio, VS Code
+
+EDUCATION
+• B.Sc in Computer Science & Engineering | Bangladesh University
+• Diploma in Engineering, Computer Technology | Feni Polytechnic Institute
+
+TRAINING & CERTIFICATIONS
+• Web Application Development | ISDB-BISEW IT Scholarship Program | 8 months
+• Web Design & Development | Learning & Earning Development Project, ICT Division | 3 months
+• IT Support Technician | Skills for Employment Investment Program (SEIP) | 6 months
+
+AREAS OF EXPERTISE
+• Web Application Design & Development
+• Software Development Lifecycle
+• Scrum & Agile Methodologies
+• Team Leadership & Supervision
+• Technical Process Improvement
+• Proficient Troubleshooting
+            `;
+
+            // Create and download the resume
+            const blob = new Blob([resumeContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Kutub_Uddin_Tipu_Resume.txt';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+
+            // Show download feedback
+            const btn = this;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Downloaded!';
+            btn.style.background = 'var(--success-gradient)';
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = 'var(--success-gradient)';
+            }, 2000);
         });
-    }
 
-    // Show/hide mobile menu toggle based on screen size
-    function handleMobileMenu() {
-        if (window.innerWidth <= 768) {
-            if (mobileMenuToggle) mobileMenuToggle.style.display = 'block';
-        } else {
-            if (mobileMenuToggle) mobileMenuToggle.style.display = 'none';
-            if (navLinks) navLinks.classList.remove('active');
-        }
-    }
-
-    window.addEventListener('resize', handleMobileMenu);
-    handleMobileMenu();
-
-    // Add scroll-to-top button
-    const scrollToTopBtn = document.createElement('button');
-    scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    scrollToTopBtn.className = 'scroll-to-top';
-    scrollToTopBtn.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #0078d7;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        cursor: pointer;
-        display: none;
-        z-index: 1000;
-        font-size: 1.2rem;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    `;
-
-    document.body.appendChild(scrollToTopBtn);
-
-    window.addEventListener('scroll', function() {
-        if (scrollToTopBtn) {
-            if (window.scrollY > 300) {
-                scrollToTopBtn.style.display = 'block';
-            } else {
-                scrollToTopBtn.style.display = 'none';
-            }
-        }
-    });
-
-    if (scrollToTopBtn) {
-        scrollToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        // Add subtle parallax effect to floating shapes
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const shapes = document.querySelectorAll('.shape');
+            
+            shapes.forEach((shape, index) => {
+                const speed = (index + 1) * 0.5;
+                shape.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
             });
         });
-    }
-});
+
+        // Add typing effect to hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            setTimeout(type, 1000);
+        }
+
+        // Initialize typing effect after page load
+        window.addEventListener('load', () => {
+            const heroTitle = document.querySelector('.hero h1');
+            if (heroTitle) {
+                const text = heroTitle.textContent;
+                typeWriter(heroTitle, text, 150);
+            }
+        });
+
+        // Add hover effect to skill items
+        document.querySelectorAll('.skill-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(10px) scale(1.05)';
+                this.style.background = 'rgba(102, 126, 234, 0.1)';
+                this.style.borderRadius = '10px';
+                this.style.padding = '10px 15px';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+                this.style.background = '';
+                this.style.borderRadius = '';
+                this.style.padding = '10px 0';
+            });
+        });
+
+        // Add counter animation to stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/[^\d]/g, ''));
+                const isPercentage = counter.textContent.includes('%');
+                const isPlus = counter.textContent.includes('+');
+                let current = 0;
+                const increment = target / 50;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    
+                    let displayValue = Math.floor(current);
+                    if (isPercentage) displayValue += '%';
+                    if (isPlus) displayValue += '+';
+                    
+                    counter.textContent = displayValue;
+                }, 40);
+            });
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsGrid = document.querySelector('.stats-grid');
+        if (statsGrid) {
+            statsObserver.observe(statsGrid);
+        }
+        
