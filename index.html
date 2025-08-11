@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader"></div>
+    </div>
+
     <!-- Animated Background -->
     <div class="animated-bg">
         <div class="floating-shapes">
@@ -26,16 +32,26 @@
         <i class="fas fa-moon"></i>
     </button>
 
-    <!-- Navigation -->
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- Enhanced Navigation -->
+    <header id="header">
+        <nav>
+            <div class="logo">Kutub Uddin</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Blogs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -46,18 +62,24 @@
             <h1>Kutub Uddin Tipu</h1>
             <p class="subtitle">Senior Software Engineer</p>
             <p class="description">
-                Passionate developer with 4+ years of experience building scalable, secure, and efficient web applications. 
-                Specializing in ASP.NET Core, Angular, and modern cloud technologies.
+                Passionate developer with 4+ years of experience building scalable, secure, and efficient web
+                applications.
+                Currently leading teams at Technohaven Company Ltd., specializing in ASP.NET Core, Angular, and modern
+                cloud technologies.
             </p>
             <div class="btn-group">
-                <a href="#" class="btn btn-primary" id="downloadResume">
-                        <i class="fas fa-download"></i>
-                        Download Resume
-                    </a>
+                <a href="#about" class="btn btn-primary">
+                    <i class="fas fa-user"></i>
+                    Learn More
+                </a>
                 <a href="#contact" class="btn btn-secondary">
                     <i class="fas fa-envelope"></i>
                     Get In Touch
                 </a>
+                <button class="btn btn-success" id="heroDownloadBtn">
+                    <i class="fas fa-download"></i>
+                    Download Resume
+                </button>
             </div>
         </div>
     </section>
@@ -66,26 +88,66 @@
     <section id="about" class="section">
         <h2 class="section-title fade-up">About Me</h2>
         <div class="about-content fade-up">
-            <div class="profile-image-container2">
-                <img src="images/Tipu_Sultan_PS.png" alt="Kutub Uddin Tipu" class="profile-image2">
+            <div class="about-image">
+                <img src="images/Tipu_Sultan_PS.png" alt="Kutub Uddin Tipu">
             </div>
             <div class="about-text">
                 <p>
-                    I'm a passionate Senior Software Engineer with expertise in building scalable web applications. 
-                    Currently working at Technohaven Company Ltd., I specialize in translating complex client requirements 
-                    into robust software solutions.
+                    I'm a passionate Senior Software Engineer with expertise in building scalable web applications.
+                    Currently working at Technohaven Company Ltd., I specialize in translating complex client
+                    requirements
+                    into robust software solutions that drive business growth.
                 </p>
                 <p>
-                    My expertise spans ASP.NET Core, Angular, PostgreSQL, and software architecture following SOLID principles. 
-                    I'm passionate about clean code, agile methodologies, and product-focused development that drives real business value.
+                    My expertise spans ASP.NET Core, Angular, PostgreSQL, and software architecture following SOLID
+                    principles.
+                    I'm passionate about clean code, agile methodologies, and product-focused development. I have
+                    successfully
+                    led teams and delivered projects that resulted in significant revenue growth and improved user
+                    experiences.
                 </p>
                 <p>
-                    From Mohakhali, Dhaka, I bring both technical excellence and leadership experience, having successfully 
-                    supervised teams and delivered projects that resulted in significant revenue growth and improved user experiences.
+                    Based in Mohakhali, Dhaka, I bring both technical excellence and leadership experience to every
+                    project.
+                    I believe in continuous learning and staying updated with the latest technologies to deliver
+                    cutting-edge solutions.
                 </p>
             </div>
         </div>
+        <!-- Education & Training Section -->
+        <div class="education-section fade-up">
+            <!-- <h2 class="section-title">Education & Training</h2> -->
 
+            <div class="education-item">
+                <h3>Bachelor of Science in CSE</h3>
+                <p class="edu-institute">Bangladesh University — <span>Computer Science & Engineering</span></p>
+                <p class="edu-desc">Comprehensive computer science education covering software engineering principles,
+                    algorithms, data structures, and modern programming paradigms.</p>
+            </div>
+
+            <div class="education-item">
+                <h3>Diploma in Engineering</h3>
+                <p class="edu-institute">Feni Polytechnic Institute — <span>Computer Technology</span></p>
+                <p class="edu-desc">Technical education focused on computer hardware, software development, and
+                    practical application of technology solutions.</p>
+            </div>
+
+            <div class="education-item">
+                <h3>Web Application Development</h3>
+                <p class="edu-institute">ISDB-BISEW IT Scholarship Program — <span>8 Months Intensive Training</span>
+                </p>
+                <p class="edu-desc">Comprehensive web development training covering modern frameworks, database
+                    management, and industry best practices.</p>
+            </div>
+
+            <div class="education-item">
+                <h3>Web Design & Development</h3>
+                <p class="edu-institute">ICT Division - Learning & Earning Project — <span>3 Months Specialized
+                        Course</span></p>
+                <p class="edu-desc">Focused training on responsive web design, user experience, and modern web
+                    development technologies.</p>
+            </div>
+        </div>
         <div class="stats-grid fade-up">
             <div class="stat-card">
                 <div class="stat-number">4+</div>
@@ -101,37 +163,144 @@
             </div>
             <div class="stat-card">
                 <div class="stat-number">3</div>
-                <div class="stat-label">Team Leadership</div>
+                <div class="stat-label">Team Members Led</div>
             </div>
         </div>
+
+
+
     </section>
 
     <!-- Experience Section -->
     <section id="experience" class="section">
         <h2 class="section-title fade-up">Professional Experience</h2>
-        <div class="timeline fade-up">
-            <div class="timeline-item">
-                <div class="timeline-date1">April 2023 - Present</div>
-                <div class="timeline-content">
-                    <div class="timeline-company">Technohaven Company Ltd.</div>
-                    <div class="timeline-position">Senior Software Engineer</div>
-                    <div class="timeline-description">
-                        Leading a team of 3 junior engineers in developing VATPrompt - an automated VAT management system. 
-                        Built robust APIs for ERP integration and achieved 34% revenue increase within 6 months through 
-                        application enhancements and performance optimizations.
+        <div class="timeline-container fade-up">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">April 2023 - Present</div>
+                    <div class="timeline-content">
+                        <div class="timeline-company">Technohaven Company Ltd.</div>
+                        <div class="timeline-position">Senior Software Engineer</div>
+                        <div class="timeline-description">
+                            <p>Leading development of enterprise-level applications and managing a team of junior
+                                developers.</p>
+                            <ul>
+                                <li>Supervised and led a team of 3 junior software engineers</li>
+                                <li>Developed VATPrompt - Automated VAT management system</li>
+                                <li>Built RESTful APIs for ERP, SAP, and Tally software integration</li>
+                                <li>Achieved 34% revenue increase within 6 months</li>
+                                <li>Developed THRM (Human Resource Management) software</li>
+                                <li>Enhanced application performance and reliability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">June 2021 - March 2023</div>
+                    <div class="timeline-content">
+                        <div class="timeline-company">Oner Systems Limited</div>
+                        <div class="timeline-position">Software Engineer</div>
+                        <div class="timeline-description">
+                            <p>Full-stack development of ERP solutions using modern web technologies.</p>
+                            <ul>
+                                <li>Designed and developed Oner ERP Suite web applications</li>
+                                <li>Worked with ASP.NET MVC, REST API, and AngularJS</li>
+                                <li>Implemented Entity Framework and SQL Server solutions</li>
+                                <li>Enhanced application features and optimized performance</li>
+                                <li>Troubleshot complex technological issues</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-date2">June 2021 - March 2023</div>
-                <div class="timeline-content">
-                    <div class="timeline-company">Oner Systems Limited</div>
-                    <div class="timeline-position">Software Engineer</div>
-                    <div class="timeline-description">
-                        Designed and developed Oner ERP Suite web applications using ASP.NET MVC and AngularJS. 
-                        Worked extensively with Entity Framework and SQL Server to enhance data frameworks and 
-                        optimize application performance and reliability.
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2 class="section-title fade-up">Featured Projects</h2>
+        <div class="projects-grid fade-up">
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-placeholder">VATPrompt</div>
+                </div>
+                <div class="project-content">
+                    <h3>VATPrompt - VAT Management System</h3>
+                    <p>Automated VAT accounts management system for taxpayers with comprehensive reporting and
+                        compliance features.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">ASP.NET Core</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <!-- <span class="tech-tag">Bootstrap</span> -->
+                    </div>
+                    <div class="project-links">
+                        <!-- <a href="#" class="btn btn-primary">Live Demo</a> -->
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-placeholder">VATPrompt API</div>
+                </div>
+                <div class="project-content">
+                    <h3>VATPrompt API Integration</h3>
+                    <p>RESTful API endpoints designed for seamless integration with ERP, SAP, and Tally software
+                        systems.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">ASP.NET Core</span>
+                        <span class="tech-tag">Web API</span>
+                        <span class="tech-tag">REST API</span>
+                        <!-- <span class="tech-tag">JSON</span> -->
+                    </div>
+                    <div class="project-links">
+                        <!-- <a href="#" class="btn btn-primary">API Docs</a> -->
+                        <a href="#" class="btn btn-secondary">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-placeholder">THRM</div>
+                </div>
+                <div class="project-content">
+                    <h3>THRM - HR Management System</h3>
+                    <p>Comprehensive Human Resource Management software with employee tracking, payroll, and performance
+                        management.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">ASP.NET MVC</span>
+                        <span class="tech-tag">Angular</span>
+                        <span class="tech-tag">SQL Server</span>
+                        <!-- <span class="tech-tag">Entity Framework</span> -->
+                    </div>
+                    <div class="project-links">
+                        <!-- <a href="#" class="btn btn-primary">View Project</a> -->
+                        <a href="#" class="btn btn-secondary">Case Study</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-placeholder">Oner ERP</div>
+                </div>
+                <div class="project-content">
+                    <h3>Oner ERP Suite</h3>
+                    <p>Full-featured Enterprise Resource Planning system with modules for finance, inventory, and
+                        customer management.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">ASP.NET MVC</span>
+                        <span class="tech-tag">Angular</span>
+                        <span class="tech-tag">SQL Server</span>
+                        <!-- <span class="tech-tag">Bootstrap</span> -->
+                    </div>
+                    <div class="project-links">
+                        <!-- <a href="#" class="btn btn-primary">Explore</a> -->
+                        <a href="#" class="btn btn-secondary">Features</a>
                     </div>
                 </div>
             </div>
@@ -149,7 +318,8 @@
                     <li class="skill-item"><i class="fab fa-microsoft"></i>ASP.NET Web Forms</li>
                     <li class="skill-item"><i class="fab fa-microsoft"></i>ASP.NET MVC</li>
                     <li class="skill-item"><i class="fas fa-code"></i>C#</li>
-                    <li class="skill-item"><i class="fas fa-server"></i>Web API / REST API</li>
+                    <li class="skill-item"><i class="fas fa-server"></i>Web API</li>
+                    <li class="skill-item"><i class="fas fa-exchange-alt"></i>REST API</li>
                     <li class="skill-item"><i class="fas fa-database"></i>Entity Framework</li>
                 </ul>
             </div>
@@ -175,26 +345,83 @@
                     <li class="skill-item"><i class="fab fa-git-alt"></i>Git</li>
                     <li class="skill-item"><i class="fas fa-code-branch"></i>SVN</li>
                     <li class="skill-item"><i class="fas fa-bug"></i>Unit Testing</li>
+                    <li class="skill-item"><i class="fas fa-tools"></i>Visual Studio</li>
+                    <li class="skill-item"><i class="fas fa-code"></i>VS Code</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-     <section id="contact" class="section">
-        <h2 class="section-title fade-up">Get In Touch</h2>
-        <div class="contact-container fade-up">
-            <div class="contact-info">
-                <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--text-primary);">
-                    Let's work together to build something amazing!
-                </h3>
-                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 30px;">
-                    I'm always interested in new opportunities and exciting projects. 
-                    Feel free to reach out if you'd like to discuss potential collaborations.
-                </p>
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <h2 class="section-title fade-up">Latest Blog Posts</h2>
+        <div class="education-grid fade-up">
 
+            <div class="education-card">
+                <div class="education-degree">Mastering ASP.NET Core for Scalable Web Apps</div>
+                <div class="education-institution">Published: July 15, 2025</div>
+                <div class="education-field">Web Development</div>
+                <div class="education-description short">
+                    Learn how to design and build scalable, maintainable applications using ASP.NET Core,
+                    following SOLID principles and best practices for enterprise-level projects.
+                </div>
+                <button class="read-more">Read More</button>
+            </div>
+
+            <div class="education-card">
+                <div class="education-degree">Top 10 Angular Tips for Faster UI</div>
+                <div class="education-institution">Published: June 20, 2025</div>
+                <div class="education-field">Frontend Development</div>
+                <div class="education-description short">
+                    Angular can be a powerhouse when optimized correctly. Discover the top techniques
+                    to boost performance, enhance UX, and maintain cleaner code for your projects.
+                </div>
+                <button class="read-more">Read More</button>
+            </div>
+
+            <div class="education-card">
+                <div class="education-degree">PostgreSQL Performance Tuning Guide</div>
+                <div class="education-institution">Published: May 28, 2025</div>
+                <div class="education-field">Database Optimization</div>
+                <div class="education-description short">
+                    Unlock the full potential of PostgreSQL by learning essential indexing strategies,
+                    query optimization, and configuration tweaks for maximum speed.
+                </div>
+                <button class="read-more">Read More</button>
+            </div>
+
+            <div class="education-card">
+                <div class="education-degree">The Future of Web Development in 2025</div>
+                <div class="education-institution">Published: May 5, 2025</div>
+                <div class="education-field">Tech Trends</div>
+                <div class="education-description short">
+                    As technology evolves, so do the tools and frameworks we use. This article explores
+                    upcoming trends, AI-driven development, and Web3 integration for modern apps.
+                </div>
+                <button class="read-more">Read More</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2 class="section-title fade-up">Get In Touch</h2>
+        <!-- Two-column container -->
+        <div class="contact-container fade-up" style="display: flex; flex-wrap: wrap; gap: 40px;">
+
+            <!-- Intro text above both columns -->
+            <div class="contact-info fade-up" style="margin-bottom: 30px;">
+                <h3>Let's Build Something Amazing Together!</h3>
+                <p>
+                    I'm always excited about new opportunities and challenging projects.
+                    Whether you're looking for a senior developer, technical consultant, or team lead,
+                    I'd love to discuss how we can work together to create exceptional software solutions.
+                </p>
+            </div>
+            <!-- Left: Contact Info -->
+            <div class="contact-info" style="flex: 1; min-width: 280px;">
                 <div class="contact-links">
-                    <div style="display:flex; flex-direction:column; gap:15px;">
                     <a href="mailto:kutubuddin.net@hotmail.com" class="contact-link">
                         <i class="fas fa-envelope"></i>
                         kutubuddin.net@hotmail.com
@@ -212,33 +439,61 @@
                         GitHub Profile
                     </a>
                 </div>
-                </div>
-<div style="flex:1; min-width:300px;">
-      <h4 style="margin-bottom:15px; font-size:1.2rem;">Message me</h4>
-      <form onsubmit="return false" style="display:grid; gap:15px;">
-        <input type="text" id="name" placeholder="Your name" required 
-               style="padding:12px 15px; border-radius:8px; border:1px solid #ccc; font-size:1rem; outline:none;">
-        
-        <input type="email" id="email" placeholder="Your email" required 
-               style="padding:12px 15px; border-radius:8px; border:1px solid #ccc; font-size:1rem; outline:none;">
-        
-        <textarea id="message" placeholder="Message" rows="5" required 
-                  style="padding:12px 15px; border-radius:8px; border:1px solid #ccc; font-size:1rem; resize:none; outline:none;"></textarea>
-        
-        <button type="submit" onclick="MessageForm()" 
-                style="background:#ff6b6b; color:white; padding:12px 20px; border:none; border-radius:8px; cursor:pointer; font-size:1rem; display:flex; align-items:center; gap:8px; justify-content:center;">
-          <i class="fas fa-envelope"></i> Send Message
-        </button>
-      </form>
-    </div>
-
-
             </div>
+
+            <!-- Right: Contact Form -->
+            <div class="contact-form" style="flex: 1; min-width: 280px;">
+                <form onsubmit="return false" style="gap:15px;">
+                    <div style="display:grid; gap:15px">
+                        <input type="text" id="name" placeholder="Your name" required
+                            style="padding:12px 15px; border-radius:8px; border:1px solid #ccc; font-size:1rem; outline:none;">
+
+                        <input type="email" id="email" placeholder="Your email" required
+                            style="padding:12px 15px; border-radius:8px; border:1px solid #ccc; font-size:1rem; outline:none;">
+
+                        <textarea id="message" placeholder="Message" rows="5" required
+                            style="padding:12px 15px; border-radius:8px; border:1px solid #ccc; font-size:1rem; resize:none; outline:none;"></textarea>
+                    </div>
+                    <button id="contactDownloadBtn" type="submit" class="btn btn-primary" style="margin-top: 20px; align-self: flex-start;">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+
         </div>
     </section>
 
-     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Kutub Uddin Tipu</div>
+            <p class="footer-description">
+                Senior Software Engineer passionate about creating innovative solutions that drive business growth.
+                Specializing in modern web technologies and team leadership.
+            </p>
+            <div class="footer-social">
+                <a href="https://github.com/kutubuddintipu" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/kutubuddin-tipu/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:kutubuddin.net@hotmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+8801517173752">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kutub Uddin Tipu. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
-	
+
 </body>
+
 </html>
