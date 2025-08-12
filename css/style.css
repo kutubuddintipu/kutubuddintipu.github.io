@@ -27,6 +27,7 @@
             --shadow-hover: 0 30px 60px rgba(0,0,0,0.15);
             --border-radius: 20px;
             --blur-amount: 20px;
+            --navbar-height: 80px;
         }
 
         [data-theme="dark"] {
@@ -280,7 +281,8 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: calc(100vh - var(--navbar-height));
+            padding-top: var(--navbar-height); /* pushes content below navbar */
             display: flex;
             align-items: center;
             justify-content: center;

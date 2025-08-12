@@ -501,3 +501,16 @@ ACHIEVEMENTS
             });
         }, { passive: true });
         
+function adjustHeroHeight() {
+    const header = document.querySelector('header');
+    const hero = document.querySelector('.hero');
+
+    if (header && hero) {
+        const headerHeight = header.offsetHeight;
+        hero.style.minHeight = `calc(100vh - ${headerHeight}px)`;
+        hero.style.paddingTop = `${headerHeight}px`;
+    }
+}
+
+window.addEventListener('load', adjustHeroHeight);
+window.addEventListener('resize', adjustHeroHeight);
