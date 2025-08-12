@@ -11,7 +11,7 @@ const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
 const themeIcon = themeToggle.querySelector("i");
 
-const savedTheme = localStorage.getItem("theme") || "light";
+const savedTheme = localStorage.getItem("theme") || "dark";
 if (savedTheme === "dark") {
   body.setAttribute("data-theme", "dark");
   themeIcon.classList.replace("fa-moon", "fa-sun");
