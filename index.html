@@ -19,13 +19,15 @@
     <!-- Animated Background -->
     <div class="animated-bg">
         <div class="floating-shapes">
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
+            <div class="shape">&lt;/&gt;</div>
+            <div class="shape">{ }</div>
+            <div class="shape">( )</div>
+            <div class="shape">&lt;?&gt;</div>
+            <div class="shape">&lt;#&gt;</div>
         </div>
     </div>
+
+
 
     <!-- Theme Toggle -->
     <button class="theme-toggle" id="themeToggle">
@@ -454,7 +456,8 @@
                         <textarea id="message" placeholder="Message" rows="5" required
                             style="padding:12px 15px; border-radius:8px; border:1px solid #ccc; font-size:1rem; resize:none; outline:none;"></textarea>
                     </div>
-                    <button id="contactDownloadBtn" type="submit" class="btn btn-primary" style="margin-top: 20px; align-self: flex-start;">
+                    <button id="contactDownloadBtn" type="submit" class="btn btn-primary"
+                        style="margin-top: 20px; align-self: flex-start;">
                         <i class="fas fa-paper-plane"></i> Send Message
                     </button>
                 </form>
@@ -471,6 +474,24 @@
                 Senior Software Engineer passionate about creating innovative solutions that drive business growth.
                 Specializing in modern web technologies and team leadership.
             </p>
+
+            <aside class="footer-addresses">
+                <div class="address-block">
+                    <h4 class="footer-heading">Present Address</h4>
+                    <p class="footer-text">
+                        Arjotpara, Mohakhali<br />
+                        Dhaka-1212,Bangladesh
+                    </p>
+                </div>
+                <div class="address-block">
+                    <h4 class="footer-heading">Permanent Address</h4>
+                    <p class="footer-text">
+                        Aladi Nagar, Begumganj<br />
+                        Noakhali, Bangladesh
+                    </p>
+                </div>
+            </aside>
+
             <div class="footer-social">
                 <a href="https://github.com/kutubuddintipu" target="_blank">
                     <i class="fab fa-github"></i>
@@ -485,11 +506,13 @@
                     <i class="fas fa-phone"></i>
                 </a>
             </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2025 Kutub Uddin Tipu. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
